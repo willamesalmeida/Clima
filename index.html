@@ -22,7 +22,6 @@
       referrerpolicy="no-referrer"
     />
 
-    <script src="js/script.js"></script>
   </head>
   <body>
     <div class="container">
@@ -30,11 +29,11 @@
         <h3>Confira o clima de uma cidade:</h3>
         <div class="form-input-container">
           <input
-            type="text"
-            placeholder="Digite o nome da cidade"
-            id="city-input"
+          type="text"
+          placeholder="Digite o nome da cidade"
+          id="city-input"
           />
-          <button id="search">
+          <button id="search" class="Willames">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
@@ -45,12 +44,12 @@
           <span id="city">Macéio</span>
           <img src="https://countryflagsapi.com/png/br" alt="Bandeira do país" id="country" />
         </h2>
-        <p id="temperature"><span>38</span>&deg;C</p>
+        <p id="temperature"><span>38 </span>&deg;C</p>
         <div id="description-container">
-          <p id="descrition">Nublado</p>
-          <img src="" alt="Condições do tempo" id="weather-icon" />
+          <p id="description">Nublado</p>
+          <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="Condições do tempo" id="weather-icon" />
         </div>
-        <div id="datails-container">
+        <div id="details-container">
           <p id="umidity">
             <i class="fa-solid fa-droplet"></i>
             <span>48%</span>
@@ -62,5 +61,7 @@
         </div>
       </div>
     </div>
+    <script src="js/script.js"></script>
   </body>
-</html>
+  </html>
+  
