@@ -11,20 +11,17 @@ const countryIconElement = document.querySelector("#country")
 const tempElement = document.querySelector("#temperature span");
 const descripElement = document.querySelector("#description");
 const weatherIconElement = document.querySelector("#weather-icon")
-const humidityIconElement = document.querySelector("#humidity span")
+const humidityIconElement = document.querySelector("#umidity span")
 const windIconElement = document.querySelector("#wind span");
 
 const weatherContainer = document.querySelector("#weather-data")
 
-const loader = document.querySelector("#loading");
 
 //Funções
 const getWeatherData = async(city) => {
     const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metrica&appid=${apiKey}&lang=pt_br`;
-    displayLoading()
     const res = await fetch(apiWeatherURL)
     const data = await res.json();
-    hideLoading()
     return data
 }
 
@@ -37,28 +34,10 @@ const showWeatherData = async (city) => {
     countryIconElement.setAttribute("src",apiContryURL + data.sys.country);
     humidityIconElement.innerText = `${data.main.humidity}%`;
    windIconElement.innerText = `${data.wind.speed} km/h`
-    weatherContainer.classList.remove("hide")
-}
-
-
-document.querySelector("#loading");
-
-// showing loading
-function displayLoading() {
-    loader.classList.add("display");
-    // to stop loading after some time
-    setTimeout(() => {
-        loader.classList.remove("display");
-    }, 5000);
-}
-
-// hiding loading 
-function hideLoading() {
-    loader.classList.remove("display");
 }
 
 //Eventos
-searchBtn.addEventListener('click', (e) => {
+searchBtn?.addEventListener('click', (e) => {
     
     e.preventDefault();
     
@@ -66,9 +45,3 @@ searchBtn.addEventListener('click', (e) => {
     showWeatherData(city)
 }
 )
-cityInput.addEventListener("keyup", (e) => {
-    if(e.code === "Enter"){
-        const city = e.target.value
-        showWeatherData(city)
-    }
-})

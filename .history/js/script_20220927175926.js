@@ -16,7 +16,6 @@ const windIconElement = document.querySelector("#wind span");
 
 const weatherContainer = document.querySelector("#weather-data")
 
-const loader = document.querySelector("#loading");
 
 //Funções
 const getWeatherData = async(city) => {

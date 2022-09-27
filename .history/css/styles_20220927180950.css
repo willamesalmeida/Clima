@@ -105,6 +105,7 @@ body{
     margin: auto;
     visibility: hidden;
     animation: spin 1s infinite linear;
+    padding-top: 6rem;
 }
 #loading.display {
     visibility: visible;

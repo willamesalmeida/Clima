@@ -16,15 +16,12 @@ const windIconElement = document.querySelector("#wind span");
 
 const weatherContainer = document.querySelector("#weather-data")
 
-const loader = document.querySelector("#loading");
 
 //Funções
 const getWeatherData = async(city) => {
     const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metrica&appid=${apiKey}&lang=pt_br`;
-    displayLoading()
     const res = await fetch(apiWeatherURL)
     const data = await res.json();
-    hideLoading()
     return data
 }
 
